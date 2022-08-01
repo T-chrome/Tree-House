@@ -14,58 +14,6 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1 class="header__logo">
-        <a href="" class="header__logo-link"
-          >Tree <br />
-          House</a
-        >
-      </h1>
-      <!-- /.header__logo -->
-      <nav class="header__nav" id="header__nav">
-        <ul class="header__list" id="header__list">
-          <li class="header__item">
-            <a href="" class="header__link">Concept</a>
-          </li>
-          <!-- /li.Concept -->
-          <li class="header__item"><a href="" class="header__link">Menu</a></li>
-          <!-- /li.Menu -->
-          <li class="header__item"><a href="" class="header__link">News</a></li>
-          <!-- /li.News -->
-          <li class="header__item">
-            <a href="" class="header__link">Shop info</a>
-          </li>
-          <!-- /li.Shopinfo -->
-          <li class="header__item">
-            <a href="" class="header__link"
-              ><img
-                src="img/icons8-twitter-(四角)-80.png"
-                alt=""
-                class="header__img twitter"
-            /></a>
-          </li>
-          <!-- /li.twitter -->
-          <li class="header__item">
-            <a href="" class="header__link"
-              ><img
-                src="img/icons8-インスタグラム-64.png"
-                alt=""
-                class="header__img instagram"
-            /></a>
-          </li>
-          <!-- /li.instagram -->
-        </ul>
-        <!-- /ul.header__list -->
-      </nav>
-      <div class="hm" id="hm">
-        <div class="hm__bar hm__bar--top" id="hm__bar--top"></div>
-        <div class="hm__bar hm__bar--bottom" id="hm__bar--bottom"></div>
-        <p class="hm__text" id="hm__bar--text">menu</p>
-      </div>
-      <!-- /.hm -->
-    </header>
-    <!-- /.header -->
-
     <section class="top-mv">
       <ul class="top-mv__list slick">
         <li class="top-mv__item">
@@ -82,14 +30,72 @@
           />
         </li>
       </ul>
+      <header class="header">
+        <div class="header__flex">
+          <h1 class="header__logo">
+            <a href="" class="header__logo-link"
+              >Tree <br />
+              House</a
+            >
+          </h1>
+          <!-- /.header__logo -->
+          <nav class="header__nav" id="header__nav">
+            <ul class="header__list" id="header__list">
+              <li class="header__item">
+                <a href="#top-concept" class="header__link">Concept</a>
+              </li>
+              <!-- /li.Concept -->
+              <li class="header__item">
+                <a href="#top-menu" class="header__link">Menu</a>
+              </li>
+              <!-- /li.Menu -->
+              <li class="header__item">
+                <a href="" class="header__link">News</a>
+              </li>
+              <!-- /li.News -->
+              <li class="header__item">
+                <a href="#shop-info" class="header__link">Shop info</a>
+              </li>
+              <!-- /li.Shopinfo -->
+              <li class="header__item">
+                <a href="" class="header__link"
+                  ><img
+                    src="img/icons8-twitter-(四角)-80.png"
+                    alt=""
+                    class="header__img twitter"
+                /></a>
+              </li>
+              <!-- /li.twitter -->
+              <li class="header__item">
+                <a href="" class="header__link"
+                  ><img
+                    src="img/icons8-インスタグラム-64.png"
+                    alt=""
+                    class="header__img instagram"
+                /></a>
+              </li>
+              <!-- /li.instagram -->
+            </ul>
+            <!-- /ul.header__list -->
+          </nav>
+          <div class="hm" id="hm">
+            <div class="hm__bar hm__bar--top" id="hm__bar--top"></div>
+            <div class="hm__bar hm__bar--bottom" id="hm__bar--bottom"></div>
+            <p class="hm__text" id="hm__bar--text">menu</p>
+          </div>
+          <!-- /.hm -->
+        </div>
+      </header>
+      <!-- /.header -->
+
       <div class="top-mv__scrolldown">
         <span class="top-mv__scrolldown-text">Scroll</span>
       </div>
       <!-- /mv__scrolldown -->
     </section>
-    <!-- /mv -->
+    <!--/.top-mv -->
 
-    <section class="top-concept">
+    <section class="top-concept js-trigger" id="top-concept">
       <div class="container">
         <div class="top-concept__flex">
           <div class="top-concept__content">
@@ -127,26 +133,20 @@
           <!-- /top-concept__content -->
           <div class="top-concept__img--container">
             <div class="top-concept__img--wrap">
-              <img
-                src="img/garden-g3d7ce481b_1920.jpg"
-                alt=""
-                class="top-concept__img"
-              />
+              <div
+                class="top-concept__img top-concept__img--garden js-slide"
+              ></div>
             </div>
 
             <div class="top-concept__img--wrap">
-              <img
-                src="img/leaf-g86f5dcd9b_1920.jpg"
-                alt=""
-                class="top-concept__img"
-              />
+              <div
+                class="top-concept__img top-concept__img--leaf js-slide"
+              ></div>
             </div>
             <div class="top-concept__img--wrap">
-              <img
-                src="img/coffee-g2b78d257b_1920.jpg"
-                alt=""
-                class="top-concept__img"
-              />
+              <div
+                class="top-concept__img top-concept__img--coffee js-slide"
+              ></div>
             </div>
           </div>
           <!-- /top-concept__img--container -->
@@ -157,7 +157,7 @@
     </section>
     <!-- /top-concept -->
 
-    <section class="top-menu">
+    <section class="top-menu" id="top-menu">
       <div class="container">
         <div class="top-menu__title">
           <h2 class="top-menu__title--en">Menu</h2>
@@ -180,7 +180,7 @@
           />
         </div>
         <!-- /top-menu__category -->
-        <ul class="top-menu__list foods">
+        <ul class="top-menu__list foods__list">
           <li class="top-menu__item">
             <img
               src="img/blt-g41683eaf9_1920.jpg"
@@ -279,7 +279,7 @@
           <!-- /top-menu__item -->
         </ul>
         <!-- /top-menu__list -->
-        <ul class="top-menu__list drinks">
+        <ul class="top-menu__list drinks__list">
           <li class="top-menu__item">
             <img
               src="img/coffe-g4cd11c5a0_1920.jpg"
@@ -378,7 +378,7 @@
           <!-- /top-menu__item -->
         </ul>
         <!-- /top-menu__list -->
-        <ul class="top-menu__list sweets">
+        <ul class="top-menu__list sweets__list">
           <li class="top-menu__item">
             <img
               src="img/pudding-g537f81541_1920.jpg"
@@ -482,7 +482,7 @@
     </section>
     <!-- /top-menu -->
 
-    <section class="shop-info">
+    <section class="shop-info" id="shop-info">
       <div class="container">
         <div class="shop-info__title">
           <h2 class="shop-info__title--en">Shop info</h2>
@@ -537,7 +537,8 @@
       <!-- /.container -->
     </section>
     <!-- /.shop-info -->
-    <section class="top-contact">
+
+    <section class="top-contact" id="top-contact">
       <div class="container">
         <div class="top-contact__title">
           <h2 class="top-contact__title--en">Contact</h2>
@@ -558,15 +559,11 @@
     </section>
     <!-- /.contact -->
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <small class="footer__copy">&copy;Tree House</small>
     </footer>
     <!-- /.footer -->
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="js/main.js"></script>
   </body>

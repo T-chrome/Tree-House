@@ -23,6 +23,18 @@ global > font
   --font-size-xl: 2.5rem;
 }
 
+/*!
+global > z-index
+------------------------------
+*/
+:root {
+  --z-index-hamburger: 150;
+  --z-index-modal: 100;
+  --z-index-header: 30;
+  --z-index-menu: 10;
+  --z-index-default: 1;
+}
+
 html {
   color: #000;
   background: #fff;
@@ -216,13 +228,28 @@ body {
   }
 }
 
+.js-slide {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.js-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: 0.5s;
+}
+
 .container {
-  width: 65%;
+  width: 80%;
   margin: 0 auto;
   padding: 80px 0;
 }
 
 .header {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+.header__flex {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -374,14 +401,14 @@ body {
   display: flex;
   justify-content: space-between;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .top-concept__flex {
     display: block;
   }
 }
 .top-concept__content {
   position: relative;
-  margin: 40px 80px 40px 0;
+  margin: 40px 120px 40px 0;
 }
 @media screen and (max-width: 1200px) {
   .top-concept__content {
@@ -429,8 +456,41 @@ body {
 .top-concept__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+.top-concept__img--garden {
+  background-image: url(../img/garden-g3d7ce481b_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+.top-concept__img--leaf {
+  background: url(../img/leaf-g86f5dcd9b_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+.top-concept__img--coffee {
+  background: url(../img/coffee-g2b78d257b_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+.top-concept__img--container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 300px 200px;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 600px) {
+  .top-concept__img--container {
+    display: block;
+    width: 100%;
+  }
+}
+.top-concept__img--wrap {
+  width: 100%;
 }
 .top-concept__img--wrap:nth-of-type(1) {
   grid-row: 1/2;
@@ -440,12 +500,12 @@ body {
   grid-row: 2/3;
   grid-column: 1/2;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 900px) {
   .top-concept__img--wrap:nth-of-type(2) {
     transform: translateX(80px);
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .top-concept__img--wrap:nth-of-type(2) {
     transform: translateX(0);
   }
@@ -454,29 +514,15 @@ body {
   grid-row: 2/3;
   grid-column: 2/3;
 }
+@media screen and (max-width: 768px) {
+  .top-concept__img--wrap {
+    margin-top: 16px;
+  }
+}
 .top-concept__img--modifier {
   position: absolute;
   width: 50px;
   height: 50px;
-}
-.top-concept__img--container {
-  width: 80%;
-  display: grid;
-  gap: 10px;
-  grid-template-rows: 300px 150px;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 64px -80px var(--color-main);
-}
-@media screen and (max-width: 1200px) {
-  .top-concept__img--container {
-    display: block;
-  }
-}
-@media screen and (max-width: 600px) {
-  .top-concept__img--container {
-    width: 100%;
-    box-shadow: none;
-  }
 }
 
 .coffee-pot {
@@ -555,6 +601,11 @@ body {
   width: 110%;
   height: 2px;
   background: var(--color-accent);
+  transform: scale(0, 1);
+  transition: transform 0.3s;
+}
+.top-menu__category--item:hover::after {
+  transform: scale(1, 1);
 }
 .top-menu__list {
   position: relative;
@@ -565,7 +616,6 @@ body {
   grid-template-rows: 300px 300px;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 80px;
-  box-shadow: -180px -40px var(--color-main);
 }
 @media screen and (max-width: 1200px) {
   .top-menu__list {
@@ -659,6 +709,14 @@ body {
     width: 45px;
     height: 45px;
   }
+}
+
+.drinks__list {
+  display: none;
+}
+
+.sweets__list {
+  display: none;
 }
 
 .ladle {
@@ -868,10 +926,18 @@ body {
 }
 
 .top-mv {
+  position: relative;
   width: 100%;
   height: 100vh;
 }
+.top-mv__list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .top-mv__img {
+  display: block;
+  width: 100%;
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;

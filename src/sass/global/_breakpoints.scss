@@ -3,10 +3,10 @@
 // global > breakpoint
 // ------------------------------
 $breakpoints: (
-  "sm": 600px,
-  "md": 768px,
-  "lg": 1080px,
-  "xl": 1200px,
+  'sm': 600px,
+  'md': 768px,
+  'lg': 900px,
+  'xl': 1200px,
 );
 
 @mixin mq($breakpoint: sm) {
